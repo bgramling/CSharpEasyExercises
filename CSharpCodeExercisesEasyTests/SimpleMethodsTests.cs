@@ -61,5 +61,17 @@ namespace CSharpCodeExercisesEasyTests
             actual = SimpleMethods.StringHasSpaces("Has Spaces");
             Assert.IsTrue(actual, "String does have spaces so should be true");
         }
+
+        public void StringHasSameCaseCharsTest()
+        {
+            bool actual = SimpleMethods.StringHasSameCaseChars("THIS IS ALL UPPERCASE");
+            Assert.IsTrue(actual, "String contains all uppercase chars so should be true");
+
+            actual = SimpleMethods.StringHasSameCaseChars("this is all lowercase");
+            Assert.IsTrue(actual, "String contains all lowercase chars so should be true");
+
+            actual = SimpleMethods.StringHasSameCaseChars("This has Mixed case Letters.");
+            Assert.IsFalse(actual, "String contains a mixture of case so should be false");
+        }
     }
 }

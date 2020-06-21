@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace CSharpCodeExercisesEasy
 {
@@ -38,6 +39,13 @@ namespace CSharpCodeExercisesEasy
         public static bool StringHasSpaces(string str = "")
         {
             return Regex.IsMatch(str, "\\s+");
+        }
+
+        public static bool StringHasSameCaseChars(string str = "")
+        {
+            bool hasUpper = str.Any(char.IsUpper);
+            bool hasLower = str.Any(char.IsLower);
+            return !(hasUpper && hasLower);
         }
     }
 }
