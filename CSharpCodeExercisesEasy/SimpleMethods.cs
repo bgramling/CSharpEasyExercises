@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Net.NetworkInformation;
+using System.Text.RegularExpressions;
 
 namespace CSharpCodeExercisesEasy
 {
@@ -28,6 +28,16 @@ namespace CSharpCodeExercisesEasy
         public static int GetFirstElementInArray(int[] numbers)
         {
             return numbers[0];
+        }
+
+        public static bool IsStringEmpty(string str = "")
+        {
+            return str.Trim().Length == 0;
+        }
+
+        public static bool StringHasSpaces(string str = "")
+        {
+            return Regex.IsMatch(str, "\\s+");
         }
     }
 }

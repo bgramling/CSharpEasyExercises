@@ -41,5 +41,25 @@ namespace CSharpCodeExercisesEasyTests
             int expected = 80;
             Assert.AreEqual(expected, actual, 0, "80 Should be the first element in array");
         }
+
+        [TestMethod]
+        public void IsStringEmptyTest()
+        {
+            bool actual = SimpleMethods.IsStringEmpty("Test String");
+            Assert.IsFalse(actual, "Test String is not an empty string");
+
+            actual = SimpleMethods.IsStringEmpty("  ");
+            Assert.IsTrue(actual, "Was an empty string");
+        }
+
+        [TestMethod]
+        public void StringHasSpacesTest()
+        {
+            bool actual = SimpleMethods.StringHasSpaces("NoSpaces");
+            Assert.IsFalse(actual, "String does not have spaces so should be false");
+
+            actual = SimpleMethods.StringHasSpaces("Has Spaces");
+            Assert.IsTrue(actual, "String does have spaces so should be true");
+        }
     }
 }
