@@ -47,5 +47,24 @@ namespace CSharpCodeExercisesEasy
             bool hasLower = str.Any(char.IsLower);
             return !(hasUpper && hasLower);
         }
+
+        public static int[] FindMinAndMaxInNumbers(int[] numbers)
+        {
+            int min = 0;
+            int max = 0;
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (i == 0)
+                {
+                    min = numbers[0];
+                    max = numbers[0];
+                }
+                min = Math.Min(min, numbers[i]);
+                max = Math.Max(max, numbers[i]);
+            }
+
+            return new int[] { min, max };
+        }
     }
 }

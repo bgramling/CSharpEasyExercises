@@ -62,6 +62,7 @@ namespace CSharpCodeExercisesEasyTests
             Assert.IsTrue(actual, "String does have spaces so should be true");
         }
 
+        [TestMethod]
         public void StringHasSameCaseCharsTest()
         {
             bool actual = SimpleMethods.StringHasSameCaseChars("THIS IS ALL UPPERCASE");
@@ -72,6 +73,19 @@ namespace CSharpCodeExercisesEasyTests
 
             actual = SimpleMethods.StringHasSameCaseChars("This has Mixed case Letters.");
             Assert.IsFalse(actual, "String contains a mixture of case so should be false");
+        }
+
+        [TestMethod]
+        public void FindMinAndMaxInNumbersTest()
+        {
+            int[] numbers = { 2, 3, 56, 7, 1, 32 };
+            int[] actual = SimpleMethods.FindMinAndMaxInNumbers(numbers);
+
+            int expected = 1;
+            Assert.AreEqual(expected, actual[0], 0, "The number 1 should be the smallest");
+
+            expected = 56;
+            Assert.AreEqual(expected, actual[1], 0, "The number 56 should be the largest");
         }
     }
 }
